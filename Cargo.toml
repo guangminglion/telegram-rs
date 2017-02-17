@@ -1,0 +1,6 @@
+[package]
+name = "telegram"
+version = "0.1.0-pre"
+authors = ["Ryan Leckey <leckey.ryan@gmail.com>"]
+
+[dependencies]
