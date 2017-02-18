@@ -3,8 +3,8 @@
 
 **Work in Progress**
 
- - [ ] Serialize type in reference to https://core.telegram.org/mtproto/serialize **in progress**
- - [ ] Deserialize type in reference to https://core.telegram.org/mtproto/serialize **in progress**
+ - [ ] Serialize type in reference to https://core.telegram.org/mtproto/serialize (**in progress**)
+ - [ ] Deserialize type in reference to https://core.telegram.org/mtproto/serialize (**in progress**)
  - [ ] Generate type definitions for type constructors from https://core.telegram.org/schema and https://core.telegram.org/schema/mtproto
  - [ ] Generate methods for method definitions from https://core.telegram.org/schema and https://core.telegram.org/schema/mtproto
  - [ ] Build high-level client interface
