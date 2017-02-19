@@ -16,6 +16,8 @@ telegram-rs is primarily distributed under the terms of both the MIT license and
 telegram-rs was written in a "black box", strictly adhering to public documentation provided on https://core.telegram.org/api. At no point was the 
 open source Telegram application referenced.
 
-telegram-rs is using the open API provided by Telegram. telegram-rs is an **unofficial** API library and is in no way supported or endorsed by Telegram.
+telegram-rs is using the open API provided by Telegram. 
+
+telegram-rs is an unofficial API library and is in no way supported or endorsed by Telegram.
 
 See LICENSE-APACHE and LICENSE-MIT for more details.
