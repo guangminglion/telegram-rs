@@ -4,8 +4,12 @@
 **Work in Progress**
 
  - [ ] Serialize type in reference to https://core.telegram.org/mtproto/serialize (**in progress**)
+    - [ ] `telegram_derive` for `proc_macro_derive` for `Serialize`
  - [ ] Deserialize type in reference to https://core.telegram.org/mtproto/serialize (**in progress**)
- - [ ] Generate type definitions for type constructors from https://core.telegram.org/schema and https://core.telegram.org/schema/mtproto
+    - [ ] `telegram_derive` for `proc_macro_derive` for `Deserialize`
+ - [ ] Generate type definitions for type constructors from https://core.telegram.org/schema and https://core.telegram.org/schema/mtproto (**in progress**) (`telegram_codegen`)
+    - [x] `telegram_codegen`
+    - [ ] Instead of a blanket `::_` for typenames we need to check if we're in a module and do `super::_` or `_`
  - [ ] Generate methods for method definitions from https://core.telegram.org/schema and https://core.telegram.org/schema/mtproto
  - [ ] Build high-level client interface
 

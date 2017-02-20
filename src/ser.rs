@@ -290,12 +290,13 @@ impl<'a, W> ser::SerializeTuple for Compound<'a, W>
 
     #[inline]
     fn serialize_element<T: ?Sized + Serialize>(&mut self, value: &T) -> Result<()> {
-        unimplemented!();
+        value.serialize(&mut *self.0)
     }
 
     #[inline]
     fn end(self) -> Result<()> {
-        unimplemented!();
+        // Do nothing; there is no state
+        Ok(())
     }
 }
 

@@ -4,7 +4,6 @@ use serde::{ser, de};
 error_chain! {
     foreign_links {
         SystemTime(::std::time::SystemTimeError);
-        Hyper(::hyper::Error);
         Io(::std::io::Error);
     }
 }

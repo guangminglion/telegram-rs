@@ -1,0 +1,9 @@
+[package]
+name = "telegram_codegen"
+version = "0.1.0-pre"
+authors = ["Ryan Leckey <leckey.ryan@gmail.com>"]
+
+[dependencies]
+serde = "0.9.7"
+serde_derive = "0.9.7"
+serde_json = "0.9.6"

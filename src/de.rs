@@ -165,8 +165,20 @@ impl<'a, R> de::Deserializer for &'a mut Deserializer<R>
 
     #[inline]
     fn deserialize_tuple<V: de::Visitor>(self, len: usize, visitor: V) -> Result<V::Value> {
-        // NOTE: Telegram has no representation for this.
-        Err(de::Error::custom("Telegram does not support Deserializer::deserialize_tuple"))
+        struct TupleVisitor<'a, R: ReadBytesExt + 'a>(&'a mut Deserializer<R>);
+
+        impl<'a, 'b: 'a, R: ReadBytesExt + 'b> de::SeqVisitor for TupleVisitor<'a, R> {
+            type Error = Error;
+
+            fn visit_seed<T>(&mut self, seed: T) -> Result<Option<T::Value>>
+                where T: de::DeserializeSeed
+            {
+                let value = de::DeserializeSeed::deserialize(seed, &mut *self.0)?;
+                Ok(Some(value))
+            }
+        }
+
+        visitor.visit_seq(TupleVisitor(self))
     }
 
     #[inline]
@@ -187,11 +199,11 @@ impl<'a, R> de::Deserializer for &'a mut Deserializer<R>
 
     #[inline]
     fn deserialize_struct<V: de::Visitor>(self,
-                                          name: &'static str,
+                                          _: &'static str,
                                           fields: &'static [&'static str],
                                           visitor: V)
                                           -> Result<V::Value> {
-        unimplemented!();
+        self.deserialize_tuple(fields.len(), visitor)
     }
 
     #[inline]
